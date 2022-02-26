@@ -1,692 +1,404 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge,chrome=1">
-  <meta name="renderer" content="webkit">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="format-detection" content="telephone=no">
-  <meta name="google-site-verification" content="">
-  <meta name="baidu-site-verification" content="">
-  <meta name="description" content="Home / 首页 - 魔法师の个人网站">
-  <meta name="keywords" content="home, 首页, null">
-  <meta name="author" content="魔法师">
-  <meta name="layout-parts" content="[&#34;hitokoto&#34;,&#34;recentposts&#34;]">
-  <link rel="shortcut icon" type="image/png" href="/asset/img/icon.small.png">
-  <link rel="apple-touch-icon" type="image/png" href="/asset/img/author.medium.png">
-  <link rel="manifest" href="/manifest.json">
-  <title>Home / 首页 - 魔法师のHappy World</title>
-  
-  <script nomodule async src="/asset/js/nomodule.js?t=1645820142801"></script>
-  
-  <link rel="stylesheet" href="/asset/css/style.css?t=1645820142801">
-  <script type="module" src="/asset/js/main.js?t=1645820142801"></script>
-  
-<meta name="generator" content="Hexo 5.4.1"></head>
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 5.4.1">
 
-<body>
-  <canvas class="m-evanyou-canvas"></canvas>
-  <div class="m-launch"></div>
-  <div class="m-spinner">
-    <div class="m-spinner-ring"></div>
-  </div>
-  <div class="m-progress">
-    <div class="m-progress-current"></div>
-  </div>
-  <!-- Outside App -->
-  <div class="m-app">
-    <div class="m-closeDrawer"></div>
-    <div class="m-app-inner">
-      <div class="m-header">
-        <div class="p-xdrawer HIDE">
-  <i class="fas fa-bars"></i>
-</div>
-        <div class="p-xsearch HIDE">
-  <i class="fas fa-search"></i>
-  <i class="fas fa-times"></i>
-</div>
-        <div class="p-sitename HIDE">
-  <img class="p-sitename-icon" src="/asset/img/icon.medium.png">
-  <span class="p-sitename-text" data-lang="sitename"></span>
-</div>
-        <!-- END header -->
-      </div>
-      <div class="m-center">
-        <div class="m-drawer">
-          <div class="p-brand HIDE">
-  <div class="p-brand-head">
-    <img class="p-brand-avatar" src="/asset/img/author.large.png">
-  </div>
-  <div class="p-brand-detail">
-    <div class="p-brand-name" data-lang="brand.name"></div>
-    <div class="p-brand-slogan" data-lang="brand.slogan"></div>
-  </div>
-  <div class="p-brand-counts">
-    <span class="p-brand-posts" data-lang="brand.posts" data-lang-titled>
-      <i class="fas fa-archive fa-fw"></i>
-      <span class="p-brand-posts-count"></span>
-    </span><span class="p-brand-categories" data-lang="brand.categories" data-lang-titled>
-      <i class="fas fa-folder-open fa-fw"></i>
-      <span class="p-brand-categories-count"></span>
-    </span><span class="p-brand-tags" data-lang="brand.tags" data-lang-titled>
-      <i class="fas fa-tags fa-fw"></i>
-      <span class="p-brand-tags-count"></span>
-    </span>
-  </div>
-  <div class="p-brand-contacts">
-    
-    <a href="//github.com/jinyaoMa" target="_blank" data-lang="brand.github" data-lang-titled><i class="fab fa-github fa-fw"></i></a>
-    
-    <a href="mailto://jinyao.ma@outlook.com" target="_blank" data-lang="brand.email" data-lang-titled><i class="fas fa-envelope fa-fw"></i></a>
-    
-    <a href="tencent://Message/?uin=907881445" target="_blank" data-lang="brand.qq" data-lang-titled><i class="fab fa-qq fa-fw"></i></a>
-    
-  </div>
-</div>
-          <div class="p-menus HIDE">
-  
-  <div class="p-menu">
-    <div class="p-menu-caption">
-      <i class="fas fa-sitemap fa-fw"></i>
-      <span data-lang="menus.main.caption"></span>
-    </div>
-    <div class="p-menu-items">
-      
-      <a data-menu-key="home" href="/">
-        <i class="fas fa-home fa-fw"></i>
-        <span class="p-menu-items-name" data-lang="menus.main.items.home"></span>
-      </a>
-      
-      <a data-menu-key="archive" href="/archives/">
-        <i class="fas fa-archive fa-fw"></i>
-        <span class="p-menu-items-name" data-lang="menus.main.items.archive"></span>
-      </a>
-      
-      <a data-menu-key="about" href="/about/">
-        <i class="fas fa-user fa-fw"></i>
-        <span class="p-menu-items-name" data-lang="menus.main.items.about"></span>
-      </a>
-      
-    </div>
-  </div>
-  
-  <div class="p-menu">
-    <div class="p-menu-caption">
-      <i class="fas fa-briefcase fa-fw"></i>
-      <span data-lang="menus.job.caption"></span>
-    </div>
-    <div class="p-menu-items">
-      
-      <a data-menu-key="resume" href="/resume/">
-        <i class="fas fa-paper-plane fa-fw"></i>
-        <span class="p-menu-items-name" data-lang="menus.job.items.resume"></span>
-      </a>
-      
-      <a data-menu-key="letter" href="/letter/">
-        <i class="fas fa-file-contract fa-fw"></i>
-        <span class="p-menu-items-name" data-lang="menus.job.items.letter"></span>
-      </a>
-      
-    </div>
-  </div>
-  
-  <div class="p-menu">
-    <div class="p-menu-caption">
-      <i class="fas fa-ellipsis-h fa-fw"></i>
-      <span data-lang="menus.others.caption"></span>
-    </div>
-    <div class="p-menu-items">
-      
-      <a data-menu-key="library" href="/library/">
-        <i class="fas fa-box fa-fw"></i>
-        <span class="p-menu-items-name" data-lang="menus.others.items.library"></span>
-      </a>
-      
-      <a data-menu-key="icons" href="/icons/">
-        <i class="fas fa-icons fa-fw"></i>
-        <span class="p-menu-items-name" data-lang="menus.others.items.icons"></span>
-      </a>
-      
-      <a data-menu-key="records" href="/records/">
-        <i class="fas fa-edit fa-fw"></i>
-        <span class="p-menu-items-name" data-lang="menus.others.items.records"></span>
-      </a>
-      
-      <a data-menu-key="gallery" href="/gallery/">
-        <i class="fas fa-images fa-fw"></i>
-        <span class="p-menu-items-name" data-lang="menus.others.items.gallery"></span>
-      </a>
-      
-    </div>
-  </div>
-  
-</div>
-          <div class="p-skin HIDE">
-  <div class="p-skin-caption">
-    <i class="fas fa-tshirt fa-fw"></i> 
-    <span data-lang="skin.caption"></span>
-  </div>
-  <div class="p-skin-items">
-    
-      <div data-skin-key="default" data-skin-color="#000000" data-lang="skin.items.default" data-lang-titled></div>
-    
-      <div data-skin-key="gray" data-skin-color="#999999" data-lang="skin.items.gray" data-lang-titled></div>
-    
-      <div data-skin-key="colorful" data-skin-color="linear-gradient(to bottom right,#ff3333 ,#66cc66 , #0099cc)" data-lang="skin.items.colorful" data-lang-titled></div>
-    
-  </div>
-</div>
-          <div class="p-settings HIDE">
-  <div class="p-settings-caption">
-    <i class="fas fa-cog fa-fw"></i>
-    <span data-lang="settings.caption"></span>
-  </div>
-  <div class="p-settings-items">
-    
-    <div data-settings-key="langshift">
-      <i class="fas fa-globe-asia fa-fw"></i>
-      <div class="p-settings-items-switch"></div>
-      <span class="p-settings-items-name" data-lang="settings.items.langshift"></span>
-    </div>
-    
-    <div data-settings-key="night">
-      <i class="fas fa-adjust fa-fw"></i>
-      <div class="p-settings-items-switch"></div>
-      <span class="p-settings-items-name" data-lang="settings.items.night"></span>
-    </div>
-    
-    <div data-settings-key="transfigure">
-      <i class="fas fa-robot fa-fw"></i>
-      <div class="p-settings-items-switch"></div>
-      <span class="p-settings-items-name" data-lang="settings.items.transfigure"></span>
-    </div>
-    
-    <div data-settings-key="lyride">
-      <i class="fas fa-eye-slash fa-fw"></i>
-      <div class="p-settings-items-switch"></div>
-      <span class="p-settings-items-name" data-lang="settings.items.lyride"></span>
-    </div>
-    
-    <div data-settings-key="autoplay">
-      <i class="fas fa-play-circle fa-fw"></i>
-      <div class="p-settings-items-switch"></div>
-      <span class="p-settings-items-name" data-lang="settings.items.autoplay"></span>
-    </div>
-    
-  </div>
-</div>
-          <div class="m-drawer-mark"></div>
-          <!-- END drawer -->
-        </div>
-        <div class="m-frame">
-          <div class="m-main">
-            <div class="m-heaper">
-              <div class="p-xaside HIDE">
-  <i class="fas fa-chevron-right"></i>
-</div>
-              <div class="p-pather HIDE">
-  <div class="p-pather-home">
-    <i class="fas fa-home fa-fw"></i> 
-  </div>
-  <div class="p-pather-queue"></div>
-</div>
-              <!-- END heaper -->
-            </div>
-            <div class="p-translater HIDE">
-  <div class="p-translater-bar">
-    <span class="p-translater-bar-copy" data-lang="translater.copy"></span>
-    <span class="p-translater-bar-to" data-lang="translater.to"></span>
-    <span class="p-translater-bar-zh" data-lang="translater.zh"></span>
-    <span class="p-translater-bar-split">|</span>
-    <span class="p-translater-bar-en" data-lang="translater.en"></span>
-    <span class="p-translater-bar-split">|</span>
-    <span class="p-translater-bar-jp" data-lang="translater.jp"></span>
-  </div>
-  <div class="p-translater-result"></div>
-</div>
-            <div class="m-content">
-              <div class="p-hitokoto HIDE" data-api="//v1.hitokoto.cn" data-type="i">
-  <div class="p-hitokoto-caption">
-    <i class="fas fa-circle-notch fa-fw"></i>
-    <span data-lang="hitokoto"></span data-lang="hitokoto">
-  </div>
-  <div class="p-hitokoto-word">
-    <span class="p-hitokoto-content">感谢一言网(Hitokoto.cn)提供一句话服务</span>
-  </div>
-  <div class="p-hitokoto-from">
-    <span class="p-hitokoto-name">jinyaoMa</span>
-  </div>
-  <img src="/asset/img/qf3cu.huaji.png">
-</div>
-              <div class="p-recentposts HIDE">
-  <div class="p-recentposts-caption">
-    <i class="fas fa-clock fa-fw"></i>
-    <span data-lang="recentposts.caption"></span>
-  </div>
-  <div class="p-recentposts-items">
-    <div class="p-recentpost">
-      <div class="p-recentpost-cover">
-        <div><span></span></div>
-      </div>
-      <div class="p-recentpost-title">
-        <a class="p-recentpost-title-link"></a>
-      </div>
-      <div class="p-recentpost-meta">
-        <div class="p-recentpost-date">
-          <i class="fas fa-calendar-alt fa-fw"></i>
-          <span data-lang="recentposts.date" data-lang-titled></span>
-        </div>
-        <div class="p-recentpost-updated">
-          <i class="fas fa-calendar-check fa-fw"></i>
-          <span data-lang="recentposts.updated" data-lang-titled></span>
-        </div>
-        <div class="p-recentpost-categories">
-          <i class="fas fa-folder-open fa-fw"></i>
-          <span data-lang="recentposts.categories" data-lang-titled></span>
-        </div>
-      </div>
-      <div class="p-recentpost-excerpt markdown-body"></div>
-    </div>
-  </div>
-  <div class="p-recentposts-more" data-lang="recentposts.more"></div>
-</div>
-              <div class="p-timeline HIDE">
-  <div class="p-timeline-caption">
-    <i class="fas fa-history fa-fw"></i>
-    <span data-lang="timeline.caption"></span>
-  </div>
-  <div class="p-timeline-items">
-    <div class="p-timeline-item">
-      <div class="p-timeline-head">
-        <div class="p-timeline-year"></div>
-        <div class="p-timeline-count" data-lang="timeline.count" data-lang-params></div>
-      </div>
-      <div class="p-timeline-row">
-        <div class="p-timeline-date"></div>
-        <div class="p-timeline-content">
-          <div class="p-timeline-title"></div>
-          <div class="p-timeline-excerpt markdown-body"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-              <div class="p-post HIDE">
-  <div class="p-post-caption">
-    <i class="fas fa-file fa-fw"></i>
-    <span data-lang="post.caption"></span>
-  </div>
-  <div class="p-post-main">
-    <div class="p-post-readmode"><i class="fas fa-book-open fa-fw"></i></div>
-    <div class="p-post-title"></div>
-    <div class="p-post-meta">
-      <div class="p-post-date" data-lang="post.date" data-lang-titled>
-        <i class="fas fa-calendar-alt fa-fw"></i>
-        <span></span>
-      </div>
-      <div class="p-post-updated" data-lang="post.updated" data-lang-titled>
-        <i class="fas fa-calendar-check fa-fw"></i>
-        <span></span>
-      </div>
-      <div class="p-post-categories" data-lang="post.categories" data-lang-titled>
-        <i class="fas fa-folder-open fa-fw"></i>
-        <span></span>
-      </div>
-      <div class="p-post-wordcount" data-lang="post.wordcount" data-lang-titled>
-        <i class="fas fa-file-word fa-fw"></i>
-        <span></span>
-      </div>
-      <div class="p-post-min2read" data-lang="post.min2readt" data-lang-titled>
-        <i class="fas fa-stopwatch fa-fw"></i>
-        <span data-lang="post.min2read" data-lang-params></span>
-      </div>
-      <div class="p-post-viewcount" data-lang="post.viewcount" data-lang-titled>
-        <i class="fas fa-eye fa-fw"></i>
-        <span class="leancloud_visitors" data-flag-title><i class="leancloud-visitors-count">∞</i></span>
-      </div>
-    </div>
-    <div class="p-post-content markdown-body"></div>
-    <div class="p-post-ending">
-      <span data-lang="post.ending.head"></span>
-      <i class="far fa-dot-circle fa-fw"></i>
-      <span data-lang="post.ending.tail"></span>
-    </div>
-    <div class="p-post-friend">
-      <div class="p-post-friend-text" data-lang="post.friend.text"></div>
-      <div class="p-post-friend-button" data-lang="post.friend.button"></div>
-      <div class="p-post-friend-qrcode">
-        <div class="p-post-friend-qrcode-qq">
-          <img src="/asset/img/qq.png">
-          <div data-lang="post.friend.qq"></div>
-        </div>
-        <div class="p-post-friend-qrcode-wechat">
-          <img src="/asset/img/wechat.png">
-          <div data-lang="post.friend.wechat"></div>
-        </div>
-      </div>
-    </div>
-    <div class="p-post-share"></div>
-    <div class="p-post-license">
-      <div class="p-post-license-author">
-        <span class="label" data-lang="post.license.labels.author"></span>
-        <span class="p-post-license-author-text">魔法师</span>
-      </div>
-      <div class="p-post-license-link">
-        <span class="label" data-lang="post.license.labels.link"></span>
-        <span class="p-post-license-link-text"></span>
-      </div>
-      <div class="p-post-license-notice">
-        <span class="label" data-lang="post.license.labels.notice"></span>
-        <span class="p-post-license-notice-text" data-lang="post.license.text" data-lang-params="%3Ca%20target=%22_blank%22%20href=%22//creativecommons.org/licenses/by-nc-sa/4.0/%22%20title=%22BY-NC-SA%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Ci%20class=%22fab%20fa-creative-commons%22%3E%3C/i%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Cspan%3EBY-NC-SA%3C/span%3E%0A%20%20%20%20%20%20%20%20%20%20%3C/a%3E" data-lang-encoded></span>
-      </div>
-    </div>
-    <div class="p-post-tags"></div>
-    <div class="p-post-navigator">
-      <div class="p-post-navigator-prev"></div>
-      <div class="p-post-navigator-next"></div>
-      <div class="p-post-navigator-clear"></div>
-    </div>
-  </div>
-</div>
-              <div class="p-page HIDE">
-  <div class="p-page-caption">
-    <i class="fas fa-file-alt fa-fw"></i>
-    <span data-lang="page.caption"></span>
-  </div>
-  <div class="p-page-title"></div>
-  <div class="p-page-main markdown-body"></div>
-</div>
-              <div class="p-codelib HIDE">
-  <div class="p-codelib-caption">
-    <i class="fab fa-readme fa-fw"></i>
-    <span data-lang="codelib.captions.log"></span>
-  </div>
-  <div class="p-codelib-readme">
-    <div class="p-codelib-more">
-      <span class="codelib-more" data-lang="codelib.more"></span>
-      <span class="codelib-less" data-lang="codelib.less"></span>
-    </div>
-  </div>
-  <div class="p-codelib-caption">
-    <i class="fas fa-layer-group fa-fw"></i>
-    <span data-lang="codelib.captions.stack"></span>
-  </div>
-  <ul class="p-codelib-list"></ul>
-</div>
-              <div class="p-records HIDE">
-  <div class="p-record">
-    <div class="p-record-caption">
-      <i class="fas fa-save fa-fw"></i>
-      <span data-lang="records.caption"></span>_<span class="p-record-date">N/A</span>
-    </div>
-    <div class="p-record-frame">
-      <div class="p-record-main">
-        <div class="p-record-cover">
-          <img src="/asset/img/qf3cu.temp.png">
-        </div>
-        <div class="p-record-content">
-          <div class="p-record-title">
-            <span class="p-record-inner">N/A</span>
-          </div>
-          <div class="p-record-type">
-            <span class="p-record-label" data-lang="records.labels.type"></span>
-            <span class="p-record-inner">N/A</span>
-          </div>
-          <div class="p-record-source">
-            <span class="p-record-label" data-lang="records.labels.source"></span>
-            <span class="p-record-inner">N/A</span>
-          </div>
-          <div class="p-record-author">
-            <span class="p-record-label" data-lang="records.labels.author"></span>
-            <span class="p-record-inner">N/A</span>
-          </div>
-          <div class="p-record-progress">
-            <span class="p-record-label" data-lang="records.labels.progress"></span>
-            <div class="p-record-inner">
-              <div class="p-record-progress-current">N/A</div>
-            </div>
-          </div>
-          <div class="p-record-summary">
-            <span class="p-record-label" data-lang="records.labels.summary"></span>
-            <div class="p-record-inner">N/A</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-              <div class="p-gallery HIDE">
-  <div class="p-gallery-item">
-    <div class="p-gallery-caption">
-      <i class="fas fa-image fa-fw"></i>
-      <span></span>
-    </div>
-    <div class="p-gallery-image">
-      <a target="_blank"><img></a>
-    </div>
-  </div>
-</div>
-              <div class="p-iconlib HIDE">
-  <div class="p-iconlib-caption">
-    <i class="fab fa-readme fa-fw"></i>
-    <span data-lang="iconlib.captions.log"></span>
-  </div>
-  <div class="p-iconlib-readme">
-    <div class="p-iconlib-more">
-      <span class="iconlib-more" data-lang="iconlib.more"></span>
-      <span class="iconlib-less" data-lang="iconlib.less"></span>
-    </div>
-  </div>
-  <div class="p-iconlib-caption">
-    <i class="fas fa-grip-horizontal fa-fw"></i>
-    <span data-lang="iconlib.captions.stack"></span>
-  </div>
-  <iframe class="p-iconlib-iframe" sandbox="allow-same-origin" frameBorder="0" marginheight="0px"
-    marginwidth="0px"></iframe>
-</div>
-              <!-- END content -->
-            </div>
-            <div class="p-comment HIDE">
-  <div class="p-comment-caption">
-    <i class="fas fa-comments fa-fw"></i>
-    <span data-lang="comment.caption"></span>
-  </div>
-  <div class="p-comment-valine"></div>
-</div>
-            <div class="p-empty HIDE">
-  
-  <img src="/asset/img/empty.min.png">
-  
-  <img src="/asset/img/empty.min.png">
-  
-  <img src="/asset/img/empty.min.png">
-  
-  <img src="/asset/img/empty.min.png">
-  
-  <img src="/asset/img/empty.min.png">
-  
-  <img src="/asset/img/empty.min.png">
-  
-  <img src="/asset/img/empty.min.png">
-  
-  <img src="/asset/img/empty.min.png">
-  
-  <img src="/asset/img/empty.min.png">
-  
-  <img src="/asset/img/empty.min.png">
-  
-  <img src="/asset/img/empty.min.png">
-  
-  <img src="/asset/img/empty.min.png">
-  
-  <img src="/asset/img/empty.min.png">
-  
-  <img src="/asset/img/empty.min.png">
-  
-  <img src="/asset/img/empty.min.png">
-  
-  <img src="/asset/img/empty.min.png">
-  
-  <img src="/asset/img/empty.min.png">
-  
-  <img src="/asset/img/empty.min.png">
-  
-  <img src="/asset/img/empty.min.png">
-  
-  <img src="/asset/img/empty.min.png">
-  
-  <img src="/asset/img/empty.min.png">
-  
-  <img src="/asset/img/empty.min.png">
-  
-  <img src="/asset/img/empty.min.png">
-  
-  <img src="/asset/img/empty.min.png">
-  
-  <img src="/asset/img/empty.min.png">
-  
-  <img src="/asset/img/empty.min.png">
-  
-  <img src="/asset/img/empty.min.png">
-  
-  <img src="/asset/img/empty.min.png">
-  
-  <img src="/asset/img/empty.min.png">
-  
-  <img src="/asset/img/empty.min.png">
-  
-  <img src="/asset/img/empty.min.png">
-  
-  <img src="/asset/img/empty.min.png">
-  
-  <img src="/asset/img/empty.min.png">
-  
-</div>
-            <!-- END main -->
-          </div>
-          <div class="m-aside">
-            <div class="p-panels HIDE">
-  
-    <div class="p-panel" data-key="categories">
-      <div class="p-panel-caption">
-        <i class="fas fa-folder-open fa-fw"></i>
-        <span data-lang="panels.categories"></span>
-      </div>
-      <div class="p-panel-items"></div>
-    </div>
-  
-    <div class="p-panel" data-key="tags">
-      <div class="p-panel-caption">
-        <i class="fas fa-tags fa-fw"></i>
-        <span data-lang="panels.tags"></span>
-      </div>
-      <div class="p-panel-items"></div>
-    </div>
-  
-</div>
 
-            <div class="p-audioplayer HIDE">
-  <div class="p-audioplayer-caption">
-    <i class="fas fa-music fa-fw"></i>
-    <span data-lang="audioplayer" data-lang-encoded
-      data-lang-params="%3Ci%20class=%22fas%20fa-plus%20fa-fw%22%3E%3C/i%3E"></span>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/RR.jfif">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/RR.jfif">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/RR.jfif">
+  <link rel="mask-icon" href="/images/RR.jfif" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"0309minyoongi.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.10.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"manual"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+  <meta name="description" content="魔法师の个人网站">
+<meta property="og:type" content="website">
+<meta property="og:title" content="魔法师のHappy World">
+<meta property="og:url" content="https://0309minyoongi.github.io/index.html">
+<meta property="og:site_name" content="魔法师のHappy World">
+<meta property="og:description" content="魔法师の个人网站">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="momo">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://0309minyoongi.github.io/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":true,"isPost":false,"lang":"en","comments":"","permalink":"","path":"index.html","title":""}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>魔法师のHappy World</title>
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<link rel="alternate" href="/atom.xml" title="魔法师のHappy World" type="application/atom+xml">
+</head>
+
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
   </div>
-  <div class="p-audioplayer-player">
-    <meting-js server="netease" type="playlist" id="4989572738"
-      theme="#ff3300" list-max-height="297px"></meting-js>
-  </div>
-</div>
-            
-            <div class="p-toc HIDE">
-  <div class="p-toc-caption">
-    <i class="fas fa-bookmark fa-fw"></i>
-    <span data-lang="toc.caption"></span>
-  </div>
-  <div class="p-toc-main">
-    <div class="p-toc-message" data-lang="toc.noheadings"></div>
-    <div class="p-toc-list"></div>
-  </div>
-</div>
-            <div class="m-aside-mark"></div>
-            <!-- END aside -->
-          </div>
-        </div>
-      </div>
-      <div class="m-footer">
-        <div class="p-footer HIDE">
-  <div class="p-footer-copyright">
-    <span class="p-footer-copyright-year">&copy; 2019 - 2022</span>
-    <span class="p-footer-copyright-author">魔法师</span>
-  </div>
-  <div class="p-footer-powered" data-lang="footer.powered" data-lang-params="%3Ca%20target=%22_blank%22%20href=%22//hexo.io%22%3EHexo%205.4.1%3C/a%3E" data-lang-encoded></div>
-  <div class="p-footer-theme" data-lang="footer.theme" data-lang-params="%5B%22%253Ca%2520target=%2522_blank%2522%2520href=%2522//github.com/jinyaoMa/hexo-theme-mustom%2522%253EMustom%253C/a%253E%22,%22%253Ca%2520target=%2522_blank%2522%2520href=%2522/%2522%253EjinyaoMa%253C/a%2520target=%2522_blank%2522%253E%22%5D" data-lang-encoded></div>
-  <div class="p-footer-count">
-    <i class="fas fa-eye fa-fw"></i>
-    <span class="p-footer-pv">∞</span>
-    <i class="fas fa-user-tie fa-fw"></i>
-    <span class="p-footer-uv">∞</span>
-    <i class="fas fa-file-word fa-fw"></i>
-    <span class="p-footer-wd">∞</span>
-  </div>
-  <div class="p-footer-license">
-    <a target="_blank" rel="noopener" href="//creativecommons.org/licenses/by-nc-sa/4.0/" data-lang="footer.license" data-lang-titled>
-      <img src="/asset/img/by-nc-sa.svg">
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">魔法师のHappy World</h1>
+      <i class="logo-line"></i>
     </a>
+      <p class="site-subtitle" itemprop="description">happy everyday~</p>
   </div>
-</div>
-        <!-- END footer -->
-      </div>
-      <div class="p-xcanvas HIDE">
-  <i class="fas fa-video"></i>
-  <i class="fas fa-video-slash"></i>
-</div>
-      <div class="p-goingto HIDE">
-  <div class="p-goingto-top">
-    <i class="fas fa-arrow-up"></i> 
-  </div>
-  <div class="p-goingto-bottom">
-    <i class="fas fa-arrow-down"></i> 
-  </div>
-</div>
-      <div class="p-extension HIDE">
-  <div class="p-extension-frame">
-    <div class="p-extension-scroll">
-      <div class="p-extension-content"></div>
-    </div>
-  </div>
-  <div class="p-extension-button">
-    <img class="p-extension-front" src="/asset/img/start.png">
-    <img class="p-extension-back" src="/asset/img/start.reverse.png">
-  </div>
-</div>
-      <div class="p-adframe HIDE close">
-  <div class="p-adframe-qrcode"><i class="fas fa-qrcode"></i></div>
-  <div class="p-adframe-close"><i class="fas fa-times-circle"></i></div>
-  <div class="p-adframe-content">
-    <img src="/ad.png">
-  </div>
-</div>
-      <div class="p-search HIDE">
-  <div class="p-search-dialog">
-    <div class="p-search-dialog-bar">
-      <div class="p-search-dialog-button" data-lang="search.button"></div>
-      <input class="p-search-dialog-input" type="text" data-lang="search.placeholder" data-lang-placeholdered>
-    </div>
-    <div class="p-search-dialog-result"></div>
-  </div>
-</div>
-      <div class="p-notification HIDE">
-  <div class="p-notification-message">
-    <i class="fas fa-info-circle"></i>
-    <span class="p-notification-text"></span>
-  </div>
-</div>
-      <!-- END app -->
-    </div>
-  </div>
-  
-</body>
 
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section">Home</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section">Tags</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section">Categories</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section">Archives</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="momo"
+      src="/images/kk.jfif">
+  <p class="site-author-name" itemprop="name">momo</p>
+  <div class="site-description" itemprop="description">魔法师の个人网站</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">tags</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/0309minyoongi" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;0309minyoongi" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://0309minyoongi.github.io/2022/02/26/%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0%E9%AD%94%E6%B3%95%E5%B8%88%E3%81%AE%E5%BF%AB%E4%B9%90%E5%B0%8F%E5%B1%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kk.jfif">
+      <meta itemprop="name" content="momo">
+      <meta itemprop="description" content="魔法师の个人网站">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="魔法师のHappy World">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/02/26/%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0%E9%AD%94%E6%B3%95%E5%B8%88%E3%81%AE%E5%BF%AB%E4%B9%90%E5%B0%8F%E5%B1%8B/" class="post-title-link" itemprop="url">欢迎来到魔法师の快乐小屋</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-02-26 14:47:17 / Modified: 15:07:11" itemprop="dateCreated datePublished" datetime="2022-02-26T14:47:17+08:00">2022-02-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/my-life/" itemprop="url" rel="index"><span itemprop="name">my_life</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>花了将近一天的时间终于搭建好了个人博客，还挺有意思的。我在想这个博客可以用来做什么，之前是想作为技术博客，毕竟有的公司入职要求里需要有个人博客，但现在觉得只作为技术博客有些太枯燥。我大概会在里面写一些日记之类的吧，记录生活本身也是一件有趣的事。<br>偶尔觉得拥有一个属于自己的博客，就像有了一个家。现实里需要一个属于自己的家，网络上也需要。所以我尽量把我的小窝打扮得漂亮些，可爱些，如果有客人来了，在我家坐一坐喝杯茶吧，如果我的小家能让你感到温馨，对我而言是莫大的荣幸。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://0309minyoongi.github.io/2022/02/25/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/kk.jfif">
+      <meta itemprop="name" content="momo">
+      <meta itemprop="description" content="魔法师の个人网站">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="魔法师のHappy World">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/02/25/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2022-02-25 16:14:12 / Modified: 17:28:54" itemprop="dateCreated datePublished" datetime="2022-02-25T16:14:12+08:00">2022-02-25</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">momo</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+  
+  <script type="text/javascript" src="/js/clicklove.js"></script>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+  
+
+
+
+
+
+</body>
 </html>
