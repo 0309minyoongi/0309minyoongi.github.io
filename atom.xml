@@ -6,7 +6,7 @@
   <link href="https://0309minyoongi.github.io/atom.xml" rel="self"/>
   
   <link href="https://0309minyoongi.github.io/"/>
-  <updated>2022-02-26T07:07:11.462Z</updated>
+  <updated>2022-02-28T09:06:20.373Z</updated>
   <id>https://0309minyoongi.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>知识蒸馏</title>
+    <link href="https://0309minyoongi.github.io/2022/02/28/%E7%9F%A5%E8%AF%86%E8%92%B8%E9%A6%8F/"/>
+    <id>https://0309minyoongi.github.io/2022/02/28/%E7%9F%A5%E8%AF%86%E8%92%B8%E9%A6%8F/</id>
+    <published>2022-02-28T09:05:17.000Z</published>
+    <updated>2022-02-28T09:06:20.373Z</updated>
+    
+    <content type="html"><![CDATA[<p>看了同济子豪兄的视频，总结一下视频里的知识点。<br>知识蒸馏，顾名思义，就是把一个大的教师神经网络的知识萃取出来，蒸馏成一个较小的学生神经网络。<br>比如对一个马的图片进行分类，最终hard targets的结果为1，0，0。其中，1是分类为马的概率，0是分类为驴或汽车的概率，但是明显是不科学的，因为马偏向于驴的长相而不偏向于汽车的长相，用hard targets等于告诉网络分类为驴和汽车的概率是一样的。<br>但如果用soft targets，比如最终结果为0.7，0.25，0.05，分别对应马，驴，车。这样就能传递更多且更合理的信息。因此在训练教师网络时，我们可以用hard targets训练，但是对学生网络训练时，我们需要教师网络输出soft targets。<br>那我们如何去控制soft targets区分非正确类别信息的强度呢，这里要引入一个蒸馏温度T，T越高就越soft（相对平和，因此非正确类别的差距就能暴露得越明显），这里可能有些绕，建议去看视频感受一下，我用口头说肯定没法表示出来。<br>下面是知识蒸馏的过程。首先有一个已经训练好的教师网络，然后把很多数据喂给教师网络，然后教师网络会对每个数据给一个温度为T的softmax，同时有一个未训练的学生网络，也给它一个温度T，计算该温度下的softmax。然后对教师网络和学生网络的softmax做一个损失函数。而学生网络自己在T=1时进行一个hard Prediction，和hard label再做一个损失韩式，并且希望这两个越发接近。所以说学生网络既要兼顾T=x时与教师网络的loss（soft loss），又要兼顾T=1时和标准答案的loss（hard loss）最后把两者相加作为最终的loss进行训练即可。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;看了同济子豪兄的视频，总结一下视频里的知识点。&lt;br&gt;知识蒸馏，顾名思义，就是把一个大的教师神经网络的知识萃取出来，蒸馏成一个较小的学生神经网络。&lt;br&gt;比如对一个马的图片进行分类，最终hard targets的结果为1，0，0。其中，1是分类为马的概率，0是分类为驴或汽车</summary>
+      
+    
+    
+    
+    <category term="stugy" scheme="https://0309minyoongi.github.io/categories/stugy/"/>
+    
+    
+    <category term="机器学习" scheme="https://0309minyoongi.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
   
   <entry>
     <title>欢迎来到魔法师の快乐小屋</title>
