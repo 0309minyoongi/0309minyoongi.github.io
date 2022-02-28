@@ -20,15 +20,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"0309minyoongi.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.10.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"manual"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-  <meta name="description" content="看了同济子豪兄的视频，总结一下视频里的知识点。知识蒸馏，顾名思义，就是把一个大的教师神经网络的知识萃取出来，蒸馏成一个较小的学生神经网络。比如对一个马的图片进行分类，最终hard targets的结果为1，0，0。其中，1是分类为马的概率，0是分类为驴或汽车的概率，但是明显是不科学的，因为马偏向于驴的长相而不偏向于汽车的长相，用hard targets等于告诉网络分类为驴和汽车的概率是一样的。但如">
+  <meta name="description" content="看了同济子豪兄的视频，总结一下知识点。知识蒸馏，顾名思义，就是把一个大的教师神经网络的知识萃取出来，蒸馏成一个较小的学生神经网络。比如对一个马的图片进行分类，最终hard targets的结果为1，0，0。其中，1是分类为马的概率，0是分类为驴或汽车的概率，但是明显是不科学的，因为马偏向于驴的长相而不偏向于汽车的长相，用hard targets等于告诉网络分类为驴和汽车的概率是一样的。但如果用so">
 <meta property="og:type" content="website">
 <meta property="og:title" content="知识蒸馏">
 <meta property="og:url" content="https://0309minyoongi.github.io/2022/02/28/%E7%9F%A5%E8%AF%86%E8%92%B8%E9%A6%8F/index.html">
 <meta property="og:site_name" content="魔法师のHappy World">
-<meta property="og:description" content="看了同济子豪兄的视频，总结一下视频里的知识点。知识蒸馏，顾名思义，就是把一个大的教师神经网络的知识萃取出来，蒸馏成一个较小的学生神经网络。比如对一个马的图片进行分类，最终hard targets的结果为1，0，0。其中，1是分类为马的概率，0是分类为驴或汽车的概率，但是明显是不科学的，因为马偏向于驴的长相而不偏向于汽车的长相，用hard targets等于告诉网络分类为驴和汽车的概率是一样的。但如">
+<meta property="og:description" content="看了同济子豪兄的视频，总结一下知识点。知识蒸馏，顾名思义，就是把一个大的教师神经网络的知识萃取出来，蒸馏成一个较小的学生神经网络。比如对一个马的图片进行分类，最终hard targets的结果为1，0，0。其中，1是分类为马的概率，0是分类为驴或汽车的概率，但是明显是不科学的，因为马偏向于驴的长相而不偏向于汽车的长相，用hard targets等于告诉网络分类为驴和汽车的概率是一样的。但如果用so">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-02-28T09:05:17.000Z">
-<meta property="article:modified_time" content="2022-02-28T09:06:20.373Z">
+<meta property="article:modified_time" content="2022-02-28T09:14:03.968Z">
 <meta property="article:author" content="momo">
 <meta property="article:tag" content="机器学习">
 <meta name="twitter:card" content="summary">
@@ -169,12 +169,14 @@
         </a>
       </div>
       <div class="site-state-item site-state-categories">
+          <a href="/categories/">
         <span class="site-state-item-count">2</span>
-        <span class="site-state-item-name">categories</span>
+        <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
+          <a href="/tags/">
         <span class="site-state-item-count">2</span>
-        <span class="site-state-item-name">tags</span>
+        <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
 </div>
@@ -244,7 +246,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2022-02-28 17:05:17 / Modified: 17:06:20" itemprop="dateCreated datePublished" datetime="2022-02-28T17:05:17+08:00">2022-02-28</time>
+      <time title="Created: 2022-02-28 17:05:17 / Modified: 17:14:03" itemprop="dateCreated datePublished" datetime="2022-02-28T17:05:17+08:00">2022-02-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -266,7 +268,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>看了同济子豪兄的视频，总结一下视频里的知识点。<br>知识蒸馏，顾名思义，就是把一个大的教师神经网络的知识萃取出来，蒸馏成一个较小的学生神经网络。<br>比如对一个马的图片进行分类，最终hard targets的结果为1，0，0。其中，1是分类为马的概率，0是分类为驴或汽车的概率，但是明显是不科学的，因为马偏向于驴的长相而不偏向于汽车的长相，用hard targets等于告诉网络分类为驴和汽车的概率是一样的。<br>但如果用soft targets，比如最终结果为0.7，0.25，0.05，分别对应马，驴，车。这样就能传递更多且更合理的信息。因此在训练教师网络时，我们可以用hard targets训练，但是对学生网络训练时，我们需要教师网络输出soft targets。<br>那我们如何去控制soft targets区分非正确类别信息的强度呢，这里要引入一个蒸馏温度T，T越高就越soft（相对平和，因此非正确类别的差距就能暴露得越明显），这里可能有些绕，建议去看视频感受一下，我用口头说肯定没法表示出来。<br>下面是知识蒸馏的过程。首先有一个已经训练好的教师网络，然后把很多数据喂给教师网络，然后教师网络会对每个数据给一个温度为T的softmax，同时有一个未训练的学生网络，也给它一个温度T，计算该温度下的softmax。然后对教师网络和学生网络的softmax做一个损失函数。而学生网络自己在T=1时进行一个hard Prediction，和hard label再做一个损失韩式，并且希望这两个越发接近。所以说学生网络既要兼顾T=x时与教师网络的loss（soft loss），又要兼顾T=1时和标准答案的loss（hard loss）最后把两者相加作为最终的loss进行训练即可。</p>
+        <p>看了同济子豪兄的视频，总结一下知识点。<br>知识蒸馏，顾名思义，就是把一个大的教师神经网络的知识萃取出来，蒸馏成一个较小的学生神经网络。<br>比如对一个马的图片进行分类，最终hard targets的结果为1，0，0。其中，1是分类为马的概率，0是分类为驴或汽车的概率，但是明显是不科学的，因为马偏向于驴的长相而不偏向于汽车的长相，用hard targets等于告诉网络分类为驴和汽车的概率是一样的。<br>但如果用soft targets，比如最终结果为0.7，0.25，0.05，分别对应马，驴，车。这样就能传递更多且更合理的信息。因此在训练教师网络时，我们可以用hard targets训练，但是对学生网络训练时，我们需要教师网络输出soft targets。<br>那我们如何去控制soft targets区分非正确类别信息的强度呢，这里要引入一个蒸馏温度T，T越高就越soft（相对平和，因此非正确类别的差距就能暴露得越明显）<br>下面是知识蒸馏的过程。<br>首先有一个已经训练好的教师网络，然后把很多数据喂给教师网络，然后教师网络会对每个数据给一个温度为T的softmax，同时有一个未训练的学生网络，也给它一个温度T，计算该温度下的softmax。然后对教师网络和学生网络的softmax做一个损失函数。<br>而学生网络自己在T=1时进行一个hard Prediction，和hard label再做一个损失韩式，并且希望这两个越发接近。所以说学生网络既要兼顾T=x时与教师网络的loss（soft loss），又要兼顾T=1时和标准答案的loss（hard loss）最后把两者相加作为最终的loss进行训练即可。</p>
 
     </div>
 

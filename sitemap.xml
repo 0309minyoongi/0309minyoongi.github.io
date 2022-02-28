@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://0309minyoongi.github.io/tags/index.html</loc>
+    
+    <lastmod>2022-02-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://0309minyoongi.github.io/categories/index.html</loc>
+    
+    <lastmod>2022-02-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://0309minyoongi.github.io/2022/02/28/%E7%9F%A5%E8%AF%86%E8%92%B8%E9%A6%8F/</loc>
     
     <lastmod>2022-02-28</lastmod>
@@ -19,33 +37,6 @@
     <priority>0.6</priority>
   </url>
   
-  <url>
-    <loc>https://0309minyoongi.github.io/categories/index-1.html</loc>
-    
-    <lastmod>2022-02-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://0309minyoongi.github.io/categories/index.html</loc>
-    
-    <lastmod>2022-02-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://0309minyoongi.github.io/tags/index.html</loc>
-    
-    <lastmod>2022-02-25</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
 
   <url>
     <loc>https://0309minyoongi.github.io/</loc>
@@ -56,14 +47,14 @@
 
   
   <url>
-    <loc>https://0309minyoongi.github.io/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/</loc>
+    <loc>https://0309minyoongi.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2022-02-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://0309minyoongi.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/</loc>
+    <loc>https://0309minyoongi.github.io/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/</loc>
     <lastmod>2022-02-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -72,14 +63,14 @@
 
   
   <url>
-    <loc>https://0309minyoongi.github.io/categories/my-life/</loc>
+    <loc>https://0309minyoongi.github.io/categories/stugy/</loc>
     <lastmod>2022-02-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://0309minyoongi.github.io/categories/stugy/</loc>
+    <loc>https://0309minyoongi.github.io/categories/my-life/</loc>
     <lastmod>2022-02-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
