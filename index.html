@@ -242,7 +242,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2022-02-28 17:05:17 / Modified: 17:14:03" itemprop="dateCreated datePublished" datetime="2022-02-28T17:05:17+08:00">2022-02-28</time>
+      <time title="Created: 2022-02-28 17:05:17 / Modified: 17:42:21" itemprop="dateCreated datePublished" datetime="2022-02-28T17:05:17+08:00">2022-02-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -250,7 +250,7 @@
       </span>
       <span class="post-meta-item-text">In</span>
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/stugy/" itemprop="url" rel="index"><span itemprop="name">stugy</span></a>
+          <a href="/categories/study/" itemprop="url" rel="index"><span itemprop="name">study</span></a>
         </span>
     </span>
 
@@ -264,8 +264,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>看了同济子豪兄的视频，总结一下知识点。<br>知识蒸馏，顾名思义，就是把一个大的教师神经网络的知识萃取出来，蒸馏成一个较小的学生神经网络。<br>比如对一个马的图片进行分类，最终hard targets的结果为1，0，0。其中，1是分类为马的概率，0是分类为驴或汽车的概率，但是明显是不科学的，因为马偏向于驴的长相而不偏向于汽车的长相，用hard targets等于告诉网络分类为驴和汽车的概率是一样的。<br>但如果用soft targets，比如最终结果为0.7，0.25，0.05，分别对应马，驴，车。这样就能传递更多且更合理的信息。因此在训练教师网络时，我们可以用hard targets训练，但是对学生网络训练时，我们需要教师网络输出soft targets。<br>那我们如何去控制soft targets区分非正确类别信息的强度呢，这里要引入一个蒸馏温度T，T越高就越soft（相对平和，因此非正确类别的差距就能暴露得越明显）<br>下面是知识蒸馏的过程。<br>首先有一个已经训练好的教师网络，然后把很多数据喂给教师网络，然后教师网络会对每个数据给一个温度为T的softmax，同时有一个未训练的学生网络，也给它一个温度T，计算该温度下的softmax。然后对教师网络和学生网络的softmax做一个损失函数。<br>而学生网络自己在T=1时进行一个hard Prediction，和hard label再做一个损失韩式，并且希望这两个越发接近。所以说学生网络既要兼顾T=x时与教师网络的loss（soft loss），又要兼顾T=1时和标准答案的loss（hard loss）最后把两者相加作为最终的loss进行训练即可。</p>
-
+          <p>最近在学习机器学习，需要了解知识蒸馏相关的知识，于是在小破站看了同济子豪兄的视频，总结一下知识点，以作记录。
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/02/28/%E7%9F%A5%E8%AF%86%E8%92%B8%E9%A6%8F/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -314,9 +321,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2022-02-26 14:47:17 / Modified: 15:07:11" itemprop="dateCreated datePublished" datetime="2022-02-26T14:47:17+08:00">2022-02-26</time>
+      <time title="Created: 2022-02-26 14:47:17" itemprop="dateCreated datePublished" datetime="2022-02-26T14:47:17+08:00">2022-02-26</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-02-28 17:30:14" itemprop="dateModified" datetime="2022-02-28T17:30:14+08:00">2022-02-28</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -338,8 +351,15 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>花了将近一天的时间终于搭建好了个人博客，还挺有意思的。我在想这个博客可以用来做什么，之前是想作为技术博客，毕竟有的公司入职要求里需要有个人博客，但现在觉得只作为技术博客有些太枯燥。我大概会在里面写一些日记之类的吧，记录生活本身也是一件有趣的事。<br>偶尔觉得拥有一个属于自己的博客，就像有了一个家。现实里需要一个属于自己的家，网络上也需要。所以我尽量把我的小窝打扮得漂亮些，可爱些，如果有客人来了，在我家坐一坐喝杯茶吧，如果我的小家能让你感到温馨，对我而言是莫大的荣幸。</p>
-
+          <p>花了将近一天的时间终于搭建好了个人博客，还挺有意思的。我在想这个博客可以用来做什么，之前是想作为技术博客，毕竟有的公司入职要求里需要有个人博客，但现在觉得只作为技术博客有些太枯燥。我大概会在里面写一些日记之类的吧，记录生活本身也是一件有趣的事。
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/02/26/%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0%E9%AD%94%E6%B3%95%E5%B8%88%E3%81%AE%E5%BF%AB%E4%B9%90%E5%B0%8F%E5%B1%8B/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -373,8 +393,6 @@
   </span>
   <span class="author" itemprop="copyrightHolder">momo</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
-  </div>
 
     </div>
   </footer>
