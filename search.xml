@@ -1,16 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>softmax的具体代码演示</title>
+    <url>/2022/03/01/softmax%E7%9A%84%E5%85%B7%E4%BD%93%E4%BB%A3%E7%A0%81%E6%BC%94%E7%A4%BA/</url>
+    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>了解到知识蒸馏里的softmax，log_softmax，交叉熵，nll_loss，为了更好地理解这几个函数的含义，用代码演示如下。</p>
+<span id="more"></span>
+
+
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> torch.nn.functional <span class="keyword">as</span> F</span><br><span class="line">torch.manual_seed(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&lt;torch._C.Generator at 0x24901db3ef0&gt;
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">output = torch.randn(<span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line"><span class="built_in">print</span>(output)</span><br></pre></td></tr></table></figure>
+
+<pre><code>tensor([[ 1.5410, -0.2934, -2.1788],
+        [ 0.5684, -1.0845, -1.3986]])
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(F.softmax(output, dim=<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+
+<pre><code>tensor([[0.8446, 0.1349, 0.0205],
+        [0.7511, 0.1438, 0.1051]])
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(F.log_softmax(output, dim=<span class="number">1</span>))</span><br><span class="line"><span class="built_in">print</span>(torch.log(F.softmax(output, dim=<span class="number">1</span>)))</span><br></pre></td></tr></table></figure>
+
+<pre><code>tensor([[-0.1689, -2.0033, -3.8886],
+        [-0.2862, -1.9392, -2.2532]])
+tensor([[-0.1689, -2.0033, -3.8886],
+        [-0.2862, -1.9392, -2.2532]])
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(F.nll_loss(torch.tensor([[-<span class="number">1.2</span>, -<span class="number">2</span>, -<span class="number">3</span>]]), torch.tensor([<span class="number">0</span>])))</span><br></pre></td></tr></table></figure>
+
+<pre><code>tensor(1.2000)
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">output = torch.tensor([[<span class="number">1.2</span>, <span class="number">2</span>, <span class="number">3</span>]])</span><br><span class="line"></span><br><span class="line">target = torch.tensor([<span class="number">0</span>])</span><br><span class="line">log_sm_output = F.log_softmax(output, dim=<span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Output is [1.2, 2, 3]. If the target is 0, loss is:&#x27;</span>, F.nll_loss(log_sm_output, target))</span><br><span class="line"></span><br><span class="line">target = torch.tensor([<span class="number">1</span>])</span><br><span class="line">log_sm_output = F.log_softmax(output, dim=<span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Output is [1.2, 2, 3]. If the target is 1, loss is:&#x27;</span>, F.nll_loss(log_sm_output, target))</span><br><span class="line"></span><br><span class="line">target = torch.tensor([<span class="number">2</span>])</span><br><span class="line">log_sm_output = F.log_softmax(output, dim=<span class="number">1</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Output is [1.2, 2, 3]. If the target is 2, loss is:&#x27;</span>, F.nll_loss(log_sm_output, target))</span><br></pre></td></tr></table></figure>
+
+<pre><code>Output is [1.2, 2, 3]. If the target is 0, loss is: tensor(2.2273)
+Output is [1.2, 2, 3]. If the target is 1, loss is: tensor(1.4273)
+Output is [1.2, 2, 3]. If the target is 2, loss is: tensor(0.4273)
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">output = torch.tensor([[<span class="number">1.2</span>, <span class="number">2</span>, <span class="number">3</span>]])</span><br><span class="line">target = torch.tensor([<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line">log_sm_output = F.log_softmax(output, dim=<span class="number">1</span>)</span><br><span class="line">nll_loss_of_log_sm_output = F.nll_loss(log_sm_output, target)</span><br><span class="line"><span class="built_in">print</span>(nll_loss_of_log_sm_output)</span><br></pre></td></tr></table></figure>
+
+<pre><code>tensor(2.2273)
+</code></pre>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">output = torch.tensor([[<span class="number">1.2</span>, <span class="number">2</span>, <span class="number">3</span>]])</span><br><span class="line">target = torch.tensor([<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line">ce_loss = F.cross_entropy(output, target)</span><br><span class="line"><span class="built_in">print</span>(ce_loss)</span><br></pre></td></tr></table></figure>
+
+<pre><code>tensor(2.2273)
+</code></pre>
+]]></content>
+      <categories>
+        <category>study</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>知识蒸馏</title>
     <url>/2022/02/28/%E7%9F%A5%E8%AF%86%E8%92%B8%E9%A6%8F/</url>
     <content><![CDATA[<p>最近在学习机器学习，需要了解知识蒸馏相关的知识，于是在小破站看了同济子豪兄的视频，总结一下知识点，以作记录。<span id="more"></span></p>
 <hr>
-<h5 id="知识蒸馏的概念："><a href="#知识蒸馏的概念：" class="headerlink" title="知识蒸馏的概念："></a>知识蒸馏的概念：</h5><p>知识蒸馏，顾名思义，就是把一个大的教师神经网络的知识萃取出来，蒸馏成一个较小的学生神经网络。</p>
-<h5 id="soft-targets的含义："><a href="#soft-targets的含义：" class="headerlink" title="soft targets的含义："></a>soft targets的含义：</h5><p>比如对一个马的图片进行分类，最终<code>hard targets</code>的结果为<code>1，0，0</code>。其中，1是分类为马的概率，0是分类为驴或汽车的概率，但是明显是不科学的，因为马偏向于驴的长相而不偏向于汽车的长相，用<code>hard targets</code>等于告诉网络分类为驴和汽车的概率是一样的。</p>
+<h5 id="知识蒸馏的概念"><a href="#知识蒸馏的概念" class="headerlink" title="知识蒸馏的概念"></a>知识蒸馏的概念</h5><p>知识蒸馏，顾名思义，就是把一个大的教师神经网络的知识萃取出来，蒸馏成一个较小的学生神经网络。</p>
+<h5 id="soft-targets的含义"><a href="#soft-targets的含义" class="headerlink" title="soft targets的含义"></a>soft targets的含义</h5><p>比如对一个马的图片进行分类，最终<code>hard targets</code>的结果为<code>1，0，0</code>。其中，1是分类为马的概率，0是分类为驴或汽车的概率，但是明显是不科学的，因为马偏向于驴的长相而不偏向于汽车的长相，用<code>hard targets</code>等于告诉网络分类为驴和汽车的概率是一样的。</p>
 <p>但如果用<code>soft targets</code>，比如最终结果为<code>0.7，0.25，0.05</code>，分别对应马，驴，车。这样就能传递更多且更合理的信息。因此在训练教师网络时，我们可以用<code>hard targets</code>训练，但是对学生网络训练时，我们需要教师网络输出<code>soft targets</code>。</p>
 <p>那我们如何去控制<code>soft targets</code>区分非正确类别信息的强度呢，这里要引入一个蒸馏温度T，T越高就越soft（相对平和，因此非正确类别的差距就能暴露得越明显）</p>
-<h5 id="知识蒸馏的过程"><a href="#知识蒸馏的过程" class="headerlink" title="知识蒸馏的过程:"></a>知识蒸馏的过程:</h5><p>首先有一个已经训练好的教师网络，然后把很多数据喂给教师网络，然后教师网络会对每个数据给一个温度为T的softmax，同时有一个未训练的学生网络，也给它一个温度T，计算该温度下的softmax,然后对教师网络和学生网络的softmax做一个损失函数。</p>
+<h5 id="知识蒸馏的过程"><a href="#知识蒸馏的过程" class="headerlink" title="知识蒸馏的过程"></a>知识蒸馏的过程</h5><p>首先有一个已经训练好的教师网络，然后把很多数据喂给教师网络，然后教师网络会对每个数据给一个温度为T的softmax，同时有一个未训练的学生网络，也给它一个温度T，计算该温度下的softmax,然后对教师网络和学生网络的softmax做一个损失函数。</p>
 <p>而学生网络自己在T=1时进行一个<code>hard Prediction</code>，和<code>hard label</code>再做一个损失函数，并且希望这两个尽量接近。所以说学生网络既要兼顾T=x时与教师网络的<code>loss（soft loss）</code>，又要兼顾T=1时和标准答案的<code>loss（hard loss）</code>最后把两者相加作为最终的loss进行训练即可。</p>
+]]></content>
+      <categories>
+        <category>study</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>机器学习之注意力机制</title>
+    <url>/2022/03/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/</url>
+    <content><![CDATA[<p>哪些东西的输入是一堆向量且长度会改变？如文字处理，语音，图…那这些的输出是什么？每一个vector对应一个lable，或者整个sequence对应一个lable，又或者是根本不值得有几个输出，需要自己决定。</p>
+<span id="more"></span>
+
+<h3 id="self-attention"><a href="#self-attention" class="headerlink" title="self attention"></a>self attention</h3><p>对于self attention而言，需要喂给它一整个sequence的咨询，输入多少个vector，它就会输出多少个vector。</p>
+<h3 id="计算向量相关性"><a href="#计算向量相关性" class="headerlink" title="计算向量相关性"></a>计算向量相关性</h3><p>比如要输出a1对应的b1，首先在输入里找到和a1相关的所有输入。如何寻找到两个输入的相关性呢，那就需要一个特定的模组，比如Dot-product，把两个向量乘以特定的矩阵，然后再把这两个矩阵求点，当然除了这个方法之外还有很多别的方法。</p>
+<p>基于点积计算，就可以计算向量两两之间的关联性，比如首先分别计算与$a^1$与$a^2$，$a^3$，$a^4$之间的相关性。我们首先将$a^1$乘以变换矩阵$W^q$得到向量$q^1$，这里的向量$q^1$有个专门的名字，叫做 “query” 。然后将$a^1$、$a^2$、$a^3$、$a^4$分别乘以变换矩阵$W^k$得到向量$k^1$、$k^2$、$k^3$、$k^4$，这里的向量$k^i$也有个专门的名字，叫做 “key”。然后将$q^1$和这四个key分别做点积，就得到四个相关性数值。然后通过一个Soft-max层进行归一化，得到最后输出的相关性值，我们将这些值又称为“注意力分数”。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/2656792-57088203e86090fc"></p>
+<h3 id="基于注意力分数抽取向量信息"><a href="#基于注意力分数抽取向量信息" class="headerlink" title="基于注意力分数抽取向量信息"></a>基于注意力分数抽取向量信息</h3><p>将$a^1$、$a^2$、$a^3$、$a^4$乘以一个新的变换矩阵$W^v$得到向量$v^1$、$v^2$、$v^3$、$v^4$，这里的向量$W^v$也有个专门的名字，叫做 “value”。然后将向量分别乘以对应的注意力分数，并进行求和。从这里可以看出，所有向量都有参与计算，这样就做到了看全局。但是各向量参与计算的程度不一样，就相当权重值，权重值越大的，对应向量参与计算的程度就越大，最后得到的输出向量就和该向量越相似。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/2656792-dc8099d07908ae4d?imageMogr2/auto-orient/strip%7CimageView2/2/format/webp"></p>
+<h3 id="Position-Encoding"><a href="#Position-Encoding" class="headerlink" title="Position Encoding"></a>Position Encoding</h3><p>为了加入位置信息，那就给每一个位置设置一个vector$e^i$，然后把$a^i$加上$e^i$。</p>
+<h3 id="CNN-VS-Self-attention"><a href="#CNN-VS-Self-attention" class="headerlink" title="CNN VS Self-attention"></a>CNN VS Self-attention</h3><p>CNN可以看作是一个简化版的Self-attention，因此self-attention的function范围更大一些。</p>
+<p>参考资料：<br><a href="https://www.bilibili.com/video/BV1v3411r78R?p=2">https://www.bilibili.com/video/BV1v3411r78R?p=2</a><br><a href="https://www.jianshu.com/p/6c15bca81876">https://www.jianshu.com/p/6c15bca81876</a></p>
 ]]></content>
       <categories>
         <category>study</category>
