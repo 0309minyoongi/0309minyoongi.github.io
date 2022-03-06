@@ -67,10 +67,8 @@ Output is [1.2, 2, 3]. If the target is 2, loss is: tensor(0.4273)
 <h3 id="计算向量相关性"><a href="#计算向量相关性" class="headerlink" title="计算向量相关性"></a>计算向量相关性</h3><p>比如要输出a<sup>1</sup>对应的b<sup>1</sup>，首先在输入里找到和a<sup>1</sup>相关的所有输入。如何寻找到两个输入的相关性呢，那就需要一个特定的模组，比如<strong>Dot-product</strong>，把两个向量乘以特定的矩阵，然后再把这两个矩阵求点，当然除了这个方法之外还有很多别的方法。</p>
 <p>基于点积计算，就可以计算向量两两之间的关联性，比如首先分别计算与a<sup>1</sup>与a<sup>2</sup>，a<sup>3</sup>，a<sup>4</sup>之间的相关性。我们首先将a<sup>1</sup>乘以变换矩阵W<sup>q</sup>得到向量q<sup>1</sup>，这里的向量q<sup>1</sup>有个专门的名字，叫做 “query” 。</p>
 <p>然后将a<sup>1</sup>，a<sup>2</sup>，a<sup>3</sup>，a<sup>4</sup>分别乘以变换矩阵W<sup>k</sup>得到向量k<sup>1</sup>、k<sup>2</sup>、k<sup>3</sup>、k<sup>4</sup>，这里的向量k<sup>i</sup>也有个专门的名字，叫做 “key”。然后将q<sup>1</sup>和这四个key分别做点积，就得到四个相关性数值。然后通过一个Soft-max层进行归一化，得到最后输出的相关性值，我们将这些值又称为“注意力分数”。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/2656792-57088203e86090fc"></p>
 <h3 id="基于注意力分数抽取向量信息"><a href="#基于注意力分数抽取向量信息" class="headerlink" title="基于注意力分数抽取向量信息"></a>基于注意力分数抽取向量信息</h3><p>将a<sup>1</sup>，a<sup>2</sup>，a<sup>3</sup>，a<sup>4</sup>乘以一个新的变换矩阵$W^v$得到向量v<sup>1</sup>，v<sup>2</sup>，v<sup>3</sup>，v<sup>4</sup>，这里的向量W<sup>v</sup>也有个专门的名字，叫做 “value”。</p>
 <p>然后将向量分别乘以对应的注意力分数，并进行求和。从这里可以看出，所有向量都有参与计算，这样就做到了看全局。但是各向量参与计算的程度不一样，就相当权重值，权重值越大的，对应向量参与计算的程度就越大，最后得到的输出向量就和该向量越相似。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/2656792-dc8099d07908ae4d?imageMogr2/auto-orient/strip%7CimageView2/2/format/webp"></p>
 <h3 id="Position-Encoding"><a href="#Position-Encoding" class="headerlink" title="Position Encoding"></a>Position Encoding</h3><p>为了加入位置信息，那就给每一个位置设置一个vector e<sup>i</sup>，然后把e<sup>i</sup>加上e<sup>i</sup>。</p>
 <h3 id="CNN-VS-Self-attention"><a href="#CNN-VS-Self-attention" class="headerlink" title="CNN VS Self-attention"></a>CNN VS Self-attention</h3><p>CNN可以看作是一个简化版的Self-attention，因此self-attention的function范围更大一些。</p>
 <p>参考资料：<br><a href="https://www.bilibili.com/video/BV1v3411r78R?p=2">https://www.bilibili.com/video/BV1v3411r78R?p=2</a><br><a href="https://www.jianshu.com/p/6c15bca81876">https://www.jianshu.com/p/6c15bca81876</a></p>
