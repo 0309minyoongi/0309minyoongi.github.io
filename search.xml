@@ -58,10 +58,40 @@ Output is [1.2, 2, 3]. If the target is 2, loss is: tensor(0.4273)
       </tags>
   </entry>
   <entry>
-    <title>欢迎来到魔法师の快乐小屋</title>
-    <url>/2022/02/26/%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0%E9%AD%94%E6%B3%95%E5%B8%88%E3%81%AE%E5%BF%AB%E4%B9%90%E5%B0%8F%E5%B1%8B/</url>
-    <content><![CDATA[<p>花了将近一天的时间终于搭建好了个人博客，还挺有意思的。我在想这个博客可以用来做什么，之前是想作为技术博客，毕竟有的公司入职要求里需要有个人博客，但现在觉得只作为技术博客有些太枯燥。我大概会在里面写一些日记之类的吧，记录生活本身也是一件有趣的事。<span id="more"></span></p>
-<p>偶尔觉得拥有一个属于自己的博客，就像有了一个家。现实里需要一个属于自己的家，网络上也需要。所以我尽量把我的小窝打扮得漂亮些，可爱些，如果有客人来了，在我家坐一坐喝杯茶吧，如果我的小家能让你感到温馨，对我而言是莫大的荣幸。</p>
+    <title>机器学习之注意力机制</title>
+    <url>/2022/03/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/</url>
+    <content><![CDATA[<p>哪些东西的输入是一堆向量且长度会改变？如文字处理，语音，图…那这些的输出是什么？每一个vector对应一个lable，或者整个sequence对应一个lable，又或者是根本不值得有几个输出，需要自己决定。</p>
+<span id="more"></span>
+
+<h3 id="self-attention"><a href="#self-attention" class="headerlink" title="self attention"></a>self attention</h3><p>对于self attention而言，需要喂给它一整个sequence的咨询，输入多少个vector，它就会输出多少个vector。</p>
+<h3 id="计算向量相关性"><a href="#计算向量相关性" class="headerlink" title="计算向量相关性"></a>计算向量相关性</h3><p>比如要输出a<sup>1</sup>对应的b<sup>1</sup>，首先在输入里找到和a<sup>1</sup>相关的所有输入。如何寻找到两个输入的相关性呢，那就需要一个特定的模组，比如<strong>Dot-product</strong>，把两个向量乘以特定的矩阵，然后再把这两个矩阵求点，当然除了这个方法之外还有很多别的方法。</p>
+<p>基于点积计算，就可以计算向量两两之间的关联性，比如首先分别计算与a<sup>1</sup>与a<sup>2</sup>，a<sup>3</sup>，a<sup>4</sup>之间的相关性。我们首先将a<sup>1</sup>乘以变换矩阵W<sup>q</sup>得到向量q<sup>1</sup>，这里的向量q<sup>1</sup>有个专门的名字，叫做 “query” 。</p>
+<p>然后将a<sup>1</sup>，a<sup>2</sup>，a<sup>3</sup>，a<sup>4</sup>分别乘以变换矩阵W<sup>k</sup>得到向量k<sup>1</sup>、k<sup>2</sup>、k<sup>3</sup>、k<sup>4</sup>，这里的向量k<sup>i</sup>也有个专门的名字，叫做 “key”。然后将q<sup>1</sup>和这四个key分别做点积，就得到四个相关性数值。然后通过一个Soft-max层进行归一化，得到最后输出的相关性值，我们将这些值又称为“注意力分数”。</p>
+<h3 id="基于注意力分数抽取向量信息"><a href="#基于注意力分数抽取向量信息" class="headerlink" title="基于注意力分数抽取向量信息"></a>基于注意力分数抽取向量信息</h3><p>将a<sup>1</sup>，a<sup>2</sup>，a<sup>3</sup>，a<sup>4</sup>乘以一个新的变换矩阵$W^v$得到向量v<sup>1</sup>，v<sup>2</sup>，v<sup>3</sup>，v<sup>4</sup>，这里的向量W<sup>v</sup>也有个专门的名字，叫做 “value”。</p>
+<p>然后将向量分别乘以对应的注意力分数，并进行求和。从这里可以看出，所有向量都有参与计算，这样就做到了看全局。但是各向量参与计算的程度不一样，就相当权重值，权重值越大的，对应向量参与计算的程度就越大，最后得到的输出向量就和该向量越相似。</p>
+<h3 id="Position-Encoding"><a href="#Position-Encoding" class="headerlink" title="Position Encoding"></a>Position Encoding</h3><p>为了加入位置信息，那就给每一个位置设置一个vector e<sup>i</sup>，然后把e<sup>i</sup>加上e<sup>i</sup>。</p>
+<h3 id="CNN-VS-Self-attention"><a href="#CNN-VS-Self-attention" class="headerlink" title="CNN VS Self-attention"></a>CNN VS Self-attention</h3><p>CNN可以看作是一个简化版的Self-attention，因此self-attention的function范围更大一些。</p>
+<p>参考资料：<br><a href="https://www.bilibili.com/video/BV1v3411r78R?p=2">https://www.bilibili.com/video/BV1v3411r78R?p=2</a><br><a href="https://www.jianshu.com/p/6c15bca81876">https://www.jianshu.com/p/6c15bca81876</a></p>
+]]></content>
+      <categories>
+        <category>study</category>
+      </categories>
+      <tags>
+        <tag>机器学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>我逐渐理解的一切</title>
+    <url>/2022/04/07/%E6%88%91%E9%80%90%E6%B8%90%E7%90%86%E8%A7%A3%E7%9A%84%E4%B8%80%E5%88%87/</url>
+    <content><![CDATA[<p>最近总是在想这个词——平凡。我承认我很平凡，这是事实，但是承认它花费了我很漫长的时间。<span id="more"></span></p>
+<p>小时候一直觉得自己是最特殊的存在，比如初中考试时，我八百米跑步时在第一圈冲到了第一，然后第二圈慢下来逐渐掉到末尾。那是我第一次认识到自己的平凡。后来上了高中后，这种感受越来越强烈，也迫使我去适应它。</p>
+<p>我有种骨子里天生的自卑感，一开始意识不到的，后来意识到它时，自卑早已深入骨髓。没人教过我面对一个瞧不起自己的人时，该如何与他交流。我会小心翼翼地讨好对方。这是一种惯性，我现在也不知道如何去改变。自卑再往后就是懦弱，有时候受到了伤害，宁愿内在消化，也不愿刺激别人。</p>
+<p>不和别人交流的时候才感到舒服，但随之而来的就是摆烂。我有时候想，爱摆烂又不给麻烦别人的这种人，你说他讨厌吧，说不上，但就是让人瞧不起。我自己就是这种性格，别人不讨厌我，但骨子里还是瞧不起我。所以我努力降低自己的存在感，降啊降啊，就缩回壳子里了。</p>
+<p>接受平凡就要付出代价，而我的代价就是变得更加平凡，变成了一个没有光环混吃等死的普通人。</p>
+<p>但现实又不允许我这样。</p>
+<p>家里面只有我一个独苗，我早晚要成长成一个遮风挡雨的大人，那种生活陌生也让人害怕，但还是要硬着头皮上，我总要长大不是么。所以我学着让自己变体面，让自己看上去不那么狼狈。偶尔也会虚情假意和朋友们客套一下。</p>
+<p>不过生活就是这样，疲惫中带着一丝痛苦和满足。</p>
+<p>我懂，这一切都是时间的小把戏，但我真的需要时间。</p>
 ]]></content>
       <categories>
         <category>my_life</category>
@@ -90,43 +120,10 @@ Output is [1.2, 2, 3]. If the target is 2, loss is: tensor(0.4273)
       </tags>
   </entry>
   <entry>
-    <title>机器学习之注意力机制</title>
-    <url>/2022/03/01/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6/</url>
-    <content><![CDATA[<p>哪些东西的输入是一堆向量且长度会改变？如文字处理，语音，图…那这些的输出是什么？每一个vector对应一个lable，或者整个sequence对应一个lable，又或者是根本不值得有几个输出，需要自己决定。</p>
-<span id="more"></span>
-
-<h3 id="self-attention"><a href="#self-attention" class="headerlink" title="self attention"></a>self attention</h3><p>对于self attention而言，需要喂给它一整个sequence的咨询，输入多少个vector，它就会输出多少个vector。</p>
-<h3 id="计算向量相关性"><a href="#计算向量相关性" class="headerlink" title="计算向量相关性"></a>计算向量相关性</h3><p>比如要输出a<sup>1</sup>对应的b<sup>1</sup>，首先在输入里找到和a<sup>1</sup>相关的所有输入。如何寻找到两个输入的相关性呢，那就需要一个特定的模组，比如<strong>Dot-product</strong>，把两个向量乘以特定的矩阵，然后再把这两个矩阵求点，当然除了这个方法之外还有很多别的方法。</p>
-<p>基于点积计算，就可以计算向量两两之间的关联性，比如首先分别计算与a<sup>1</sup>与a<sup>2</sup>，a<sup>3</sup>，a<sup>4</sup>之间的相关性。我们首先将a<sup>1</sup>乘以变换矩阵W<sup>q</sup>得到向量q<sup>1</sup>，这里的向量q<sup>1</sup>有个专门的名字，叫做 “query” 。</p>
-<p>然后将a<sup>1</sup>，a<sup>2</sup>，a<sup>3</sup>，a<sup>4</sup>分别乘以变换矩阵W<sup>k</sup>得到向量k<sup>1</sup>、k<sup>2</sup>、k<sup>3</sup>、k<sup>4</sup>，这里的向量k<sup>i</sup>也有个专门的名字，叫做 “key”。然后将q<sup>1</sup>和这四个key分别做点积，就得到四个相关性数值。然后通过一个Soft-max层进行归一化，得到最后输出的相关性值，我们将这些值又称为“注意力分数”。</p>
-<h3 id="基于注意力分数抽取向量信息"><a href="#基于注意力分数抽取向量信息" class="headerlink" title="基于注意力分数抽取向量信息"></a>基于注意力分数抽取向量信息</h3><p>将a<sup>1</sup>，a<sup>2</sup>，a<sup>3</sup>，a<sup>4</sup>乘以一个新的变换矩阵$W^v$得到向量v<sup>1</sup>，v<sup>2</sup>，v<sup>3</sup>，v<sup>4</sup>，这里的向量W<sup>v</sup>也有个专门的名字，叫做 “value”。</p>
-<p>然后将向量分别乘以对应的注意力分数，并进行求和。从这里可以看出，所有向量都有参与计算，这样就做到了看全局。但是各向量参与计算的程度不一样，就相当权重值，权重值越大的，对应向量参与计算的程度就越大，最后得到的输出向量就和该向量越相似。</p>
-<h3 id="Position-Encoding"><a href="#Position-Encoding" class="headerlink" title="Position Encoding"></a>Position Encoding</h3><p>为了加入位置信息，那就给每一个位置设置一个vector e<sup>i</sup>，然后把e<sup>i</sup>加上e<sup>i</sup>。</p>
-<h3 id="CNN-VS-Self-attention"><a href="#CNN-VS-Self-attention" class="headerlink" title="CNN VS Self-attention"></a>CNN VS Self-attention</h3><p>CNN可以看作是一个简化版的Self-attention，因此self-attention的function范围更大一些。</p>
-<p>参考资料：<br><a href="https://www.bilibili.com/video/BV1v3411r78R?p=2">https://www.bilibili.com/video/BV1v3411r78R?p=2</a><br><a href="https://www.jianshu.com/p/6c15bca81876">https://www.jianshu.com/p/6c15bca81876</a></p>
-]]></content>
-      <categories>
-        <category>study</category>
-      </categories>
-      <tags>
-        <tag>机器学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>我逐渐理解的一切</title>
-    <url>/2022/04/07/%E6%88%91%E9%80%90%E6%B8%90%E7%90%86%E8%A7%A3%E7%9A%84%E4%B8%80%E5%88%87/</url>
-    <content><![CDATA[<p>最近总是在想这个词——平凡。</p>
-<p>我承认我很平凡，这是事实，但是承认它花费了我很漫长的时间。</p>
-<span id="more"></span>
-
-<p>小时候一直觉得自己是最特殊的存在，比如初中考试时，我八百米跑步时在第一圈冲到了第一，然后第二圈慢下来逐渐掉到末尾。那是我第一次认识到自己的平凡。后来上了高中后，这种感受越来越强烈，也迫使我去适应它。</p>
-<p>我有种骨子里天生的自卑感，一开始意识不到的，后来意识到它时，自卑早已深入骨髓。没人教过我面对一个瞧不起自己的人时，该如何与他交流。我会小心翼翼地讨好对方。这是一种惯性，我现在也不知道如何去改变。自卑再往后就是懦弱，有时候受到了伤害，宁愿内在消化，也不愿刺激别人。</p>
-<p>不和别人交流的时候才感到舒服，但随之而来的就是摆烂。我有时候想，爱摆烂又不给麻烦别人的这种人，你说他讨厌吧，说不上，但就是让人瞧不起。我自己就是这种性格，别人不讨厌我，但骨子里还是瞧不起我。所以我努力降低自己的存在感，降啊降啊，就缩回壳子里了。</p>
-<p>接受平凡就要付出代价，而我的代价就是变得更加平凡，变成了一个没有光环混吃等死的普通人。</p>
-<p>但现实又不允许我这样。</p>
-<p>家里面只有我一个独苗，我早晚要成长成一个遮风挡雨的大人，那种生活陌生也让人害怕，但还是要硬着头皮上，我总要长大不是么。所以我学着让自己变体面，让自己看上去不那么狼狈。偶尔也会虚情假意和朋友们客套一下。</p>
-<p>不过生活就是这样，疲惫中带着一丝痛苦和满足。</p>
-<p>我懂，这一切都是时间的小把戏，但我真的需要时间。</p>
+    <title>欢迎来到魔法师の快乐小屋</title>
+    <url>/2022/02/26/%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0%E9%AD%94%E6%B3%95%E5%B8%88%E3%81%AE%E5%BF%AB%E4%B9%90%E5%B0%8F%E5%B1%8B/</url>
+    <content><![CDATA[<p>花了将近一天的时间终于搭建好了个人博客，还挺有意思的。我在想这个博客可以用来做什么，之前是想作为技术博客，毕竟有的公司入职要求里需要有个人博客，但现在觉得只作为技术博客有些太枯燥。我大概会在里面写一些日记之类的吧，记录生活本身也是一件有趣的事。<span id="more"></span></p>
+<p>偶尔觉得拥有一个属于自己的博客，就像有了一个家。现实里需要一个属于自己的家，网络上也需要。所以我尽量把我的小窝打扮得漂亮些，可爱些，如果有客人来了，在我家坐一坐喝杯茶吧，如果我的小家能让你感到温馨，对我而言是莫大的荣幸。</p>
 ]]></content>
       <categories>
         <category>my_life</category>
