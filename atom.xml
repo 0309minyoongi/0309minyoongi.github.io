@@ -6,7 +6,7 @@
   <link href="https://0309minyoongi.github.io/atom.xml" rel="self"/>
   
   <link href="https://0309minyoongi.github.io/"/>
-  <updated>2022-04-07T11:48:20.395Z</updated>
+  <updated>2022-04-07T13:02:11.685Z</updated>
   <id>https://0309minyoongi.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>HTML初尝试</title>
+    <link href="https://0309minyoongi.github.io/2022/04/07/HTML%E5%88%9D%E5%B0%9D%E8%AF%95/"/>
+    <id>https://0309minyoongi.github.io/2022/04/07/HTML%E5%88%9D%E5%B0%9D%E8%AF%95/</id>
+    <published>2022-04-07T12:09:31.000Z</published>
+    <updated>2022-04-07T13:02:11.685Z</updated>
+    
+    <content type="html"><![CDATA[<p>vim使用的是Sublime。head里面使用meta编码：utf-8，如果只表示中文可以用gbk。titile和h1等里面填充中文不需要加引号。</p><span id="more"></span><p>浏览器自动会做空白折叠，br可以换行，hr加上分割行，这些都是没有结束部分的，如果采用p的话可以写段落。</p><p>标签里面如何写注释呢，一般写在<code>&lt;!-- --&gt;</code>里面的是注释，层叠样式表可以渲染页面（一般写在head里面），JavaScript负责交互式行为。</p><h4 id="渲染页面"><a href="#渲染页面" class="headerlink" title="渲染页面"></a>渲染页面</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">h1 &#123;</span><br><span class="line">color: pink;</span><br><span class="line">font-size: 2cm;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure><h4 id="添加交互式"><a href="#添加交互式" class="headerlink" title="添加交互式"></a>添加交互式</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;button onclick=&quot;showWriter()&quot;&gt;点点试试看&lt;/button&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">function showWriter() &#123;</span><br><span class="line">window.alert(&#x27;哈哈哈什么也没有&#x27;);</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure><h4 id="文本标签"><a href="#文本标签" class="headerlink" title="文本标签"></a>文本标签</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">h1~h6 标题</span><br><span class="line">p 段落</span><br><span class="line">hr 水平标尺</span><br><span class="line">sub / sup 上标和下标</span><br><span class="line">em / strong 粗体和斜体</span><br><span class="line">del / ins 删除线和下划线</span><br><span class="line">br 换行</span><br><span class="line">ol youxuliebiao</span><br><span class="line">ul 无序列表 里面用li</span><br><span class="line">dl 定义列表 同理里面用li</span><br><span class="line">dt 定义标题 dd定义定义</span><br></pre></td></tr></table></figure><h4 id="添加有序列表项"><a href="#添加有序列表项" class="headerlink" title="添加有序列表项"></a>添加有序列表项</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;h2&gt;魔法师今天做了哪些事&lt;/h2&gt;</span><br><span class="line">&lt;ol&gt;</span><br><span class="line">&lt;li&gt;吃饭&lt;/li&gt;</span><br><span class="line">&lt;li&gt;睡觉&lt;/li&gt;</span><br><span class="line">    &lt;li&gt;打豆豆&lt;/li&gt;</span><br><span class="line">&lt;/ol&gt;</span><br></pre></td></tr></table></figure><h4 id="添加定义"><a href="#添加定义" class="headerlink" title="添加定义"></a>添加定义</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dl&gt;</span><br><span class="line">&lt;dt&gt;魔法师&lt;/dt&gt;</span><br><span class="line">&lt;dd&gt;是一个神奇物种，每天需要睡20小时&lt;/dd&gt;</span><br><span class="line">&lt;dd&gt;据说前身是青蛙&lt;/dd&gt;</span><br><span class="line">&lt;/dl&gt;</span><br></pre></td></tr></table></figure><h4 id="添加图片和链接"><a href="#添加图片和链接" class="headerlink" title="添加图片和链接"></a>添加图片和链接</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">图片：</span><br><span class="line">&lt;img src=&quot;xxx&quot; height=&quot;100&quot; width=&quot;100&quot;&gt;</span><br><span class="line">只能写网页src或者是相对路径，不能写绝对路径</span><br><span class="line"></span><br><span class="line">链接：</span><br><span class="line">&lt;a href=&quot;http://www.baidu.com&quot; target=&quot;_blank&quot;&gt;百度&lt;/a&gt;</span><br><span class="line">target控制是否在新窗口打开网页</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;vim使用的是Sublime。head里面使用meta编码：utf-8，如果只表示中文可以用gbk。titile和h1等里面填充中文不需要加引号。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="study" scheme="https://0309minyoongi.github.io/categories/study/"/>
+    
+    
+    <category term="HTML" scheme="https://0309minyoongi.github.io/tags/HTML/"/>
+    
+  </entry>
   
   <entry>
     <title>我逐渐理解的一切</title>
